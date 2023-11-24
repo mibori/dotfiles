@@ -1,12 +1,11 @@
-{{- $email := promptStringOnce . "email" "Email address" -}}
-
 
 encryption = "age"
+
 [age]
     identity = "~/.config/chezmoi/key.txt"
     recipient = "age18ylw9mp9ddnnnf8h7gjr0wp5d9ge3u5mjjs68keh9nx7rha6ta0sumgqxd"
 
 [data]
-    email = {{ $email | quote }}
-[git]
-    autoPush = true
+    email = "miborishante@gmail.com"
+    name = "Anton Rudnev"
+
