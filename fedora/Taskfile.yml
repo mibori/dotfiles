@@ -18,7 +18,7 @@ tasks:
       - sudo dnf config-manager --enable fedora-cisco-openh264
     status:
       # it seems not working, need to debug
-      - test -f /etc/yum.repos.d/rpmfusion-free.repo'
+      - test -f /etc/yum.repos.d/rpmfusion-free.repo
 
   global:go:
     desc: Install golang via dnf. Globally.
