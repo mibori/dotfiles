@@ -24,6 +24,7 @@ tasks:
     desc: Install golang via dnf. Globally.
     cmds:
       - sudo dnf install go
+      # - sudo dnf install golang-x-tools-gopls # incopatible with vscode
 
   global:code:
     desc: Install MS VSCode from official repo. Globally.
@@ -50,6 +51,7 @@ tasks:
     desc: Install Kubernetes. Globally.
     cmds:
       - sudo dnf install kubernetes
+  
 
   eget:
     desc: Install eget (github releases installer) to ~/bin
