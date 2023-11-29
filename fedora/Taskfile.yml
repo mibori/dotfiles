@@ -45,6 +45,11 @@ tasks:
     desc: Install Telegram Desktop from RPM Fusion. Globally
     cmds:
       - sudo dnf install telegram-desktop
+  
+  global:kubernetes:
+    desc: Install Kubernetes. Globally.
+    cmds:
+      - sudo dnf install kubernetes
 
   eget:
     desc: Install eget (github releases installer) to ~/bin
