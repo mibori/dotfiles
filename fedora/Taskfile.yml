@@ -11,6 +11,15 @@ tasks:
       - echo "{{.GREETING}}"
     silent: true
 
+  global:rpmfusion:
+    desc: Install RPM Fusion repository. Globally
+    cmds:
+      - sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+      - sudo dnf config-manager --enable fedora-cisco-openh264
+    status:
+      # it seems not working, need to debug
+      - test -f /etc/yum.repos.d/rpmfusion-free.repo'
+
   global:go:
     desc: Install golang via dnf. Globally.
     cmds:
@@ -23,6 +32,19 @@ tasks:
       - sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
       - dnf check-update
       - sudo dnf install code
+  
+  global:lazy-git:
+    desc: Install lazy-git from from copr. Globally
+    cmds:
+      - sudo dnf copr enable atim/lazygit -y
+      - sudo dnf install lazygit
+  
+  global:telegram-desktop:
+    deps:
+      - global:rpmfusion
+    desc: Install Telegram Desktop from RPM Fusion. Globally
+    cmds:
+      - sudo dnf install telegram-desktop
 
   eget:
     desc: Install eget (github releases installer) to ~/bin
