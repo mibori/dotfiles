@@ -1,0 +1,26 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  global:go:
+    desc: Install golang via dnf. Globally.
+    cmds:
+      - sudo dnf install go
+
+  global:code:
+    desc: Install MS VSCode from official repo. Globally.
+    cmds:
+      - sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+      - sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+      - dnf check-update
+      - sudo dnf install code
+
