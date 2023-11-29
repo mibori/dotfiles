@@ -24,3 +24,19 @@ tasks:
       - dnf check-update
       - sudo dnf install code
 
+  eget:
+    desc: Install eget (github releases installer) to ~/bin
+    dir: ~/bin
+    cmds:
+      - curl https://zyedidia.github.io/eget.sh | sh
+    status:
+      - test -f ~/bin/eget
+
+  ghq:
+    dir: ~/bin
+    deps:
+      - eget
+    desc: Install ghq (repo manager) to ~/bin
+    cmds:
+      - eget x-motemen/ghq
+    
