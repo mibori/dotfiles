@@ -52,6 +52,11 @@ tasks:
     cmds:
       - sudo dnf install kubernetes
   
+  global:dbeaver:
+    desc: Install DBeaver database manager directly from site. Globally.
+    cmds:
+      - sudo dnf install https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm
+  
 
   eget:
     desc: Install eget (github releases installer) to ~/bin
