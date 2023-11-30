@@ -72,6 +72,7 @@ tasks:
       - code --force --install-extension iulian-radu-at.taskfile-launcher # separate tab for tasks
       - code --force --install-extension paulvarache.vscode-taskfile # syntax, hover run tasks
 
+# TODO: Git Graph
 
   set:
     desc: "Setup all available extensions"
