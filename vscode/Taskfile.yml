@@ -46,9 +46,10 @@ tasks:
       - code --force --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 
   set:ui:
-    desc: "UI extensions: jerrygoyal.shortcut-menu-bar"
+    desc: "UI extensions: jerrygoyal.shortcut-menu-bar, chrisdias.vscode-opennewinstance"
     cmds:
-      - code --force --install-extension jerrygoyal.shortcut-menu-bar
+      - code --force --install-extension jerrygoyal.shortcut-menu-bar # prev and forward
+      - code --force --install-extension chrisdias.vscode-opennewinstance # open folder as new instance of vscode
 
   set:protobuf:
     desc: "Protobuf extensions: zxh404.vscode-proto3"
@@ -66,9 +67,11 @@ tasks:
       - code --force --install-extension vue.volar
 
   set:task:
-    desc: "go-task's extensions: iulian-radu-at.taskfile-launcher"
+    desc: "go-task's extensions: iulian-radu-at.taskfile-launcher, paulvarache.vscode-taskfile"
     cmds:
-      - code --force --install-extension iulian-radu-at.taskfile-launcher
+      - code --force --install-extension iulian-radu-at.taskfile-launcher # separate tab for tasks
+      - code --force --install-extension paulvarache.vscode-taskfile # syntax, hover run tasks
+
 
   set:
     desc: "Setup all available extensions"
