@@ -65,6 +65,11 @@ tasks:
     cmds:
       - code --force --install-extension vue.volar
 
+  set:task:
+    desc: "go-task's extensions: iulian-radu-at.taskfile-launcher"
+    cmds:
+      - code --force --install-extension iulian-radu-at.taskfile-launcher
+
   set:
     desc: "Setup all available extensions"
     cmds:
@@ -78,6 +83,7 @@ tasks:
       - task: set:protobuf
       - task: set:yaml
       - task: set:vue
+      - task: set:task
 
   delete:
     desc: "Delete all extensions"
