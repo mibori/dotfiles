@@ -6,10 +6,6 @@ vars:
   GREETING: Hello, World!
 
 tasks:
-  default:
-    cmds:
-      - echo "{{.GREETING}}"
-    silent: true
 
   global:rpmfusion:
     desc: Install RPM Fusion repository. Globally
@@ -57,6 +53,10 @@ tasks:
     cmds:
       - sudo dnf install https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm
   
+  global:zsh:
+    desc: Install zsh. Globally
+    cmds:
+      - sudo dnf install zsh
 
   eget:
     desc: Install eget (github releases installer) to ~/bin
