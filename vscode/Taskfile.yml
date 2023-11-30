@@ -25,9 +25,11 @@ tasks:
       - code --force --install-extension janisdd.vscode-edit-csv
 
   set:git:
-    desc: "Git extensions: waderyan.gitblame"
+    desc: "Git extensions: waderyan.gitblame, michaelcurrin.auto-commit-msg"
     cmds:
       - code --force --install-extension waderyan.gitblame
+      - code --force --install-extension mhutchie.git-graph
+      - code --force --install-extension michaelcurrin.auto-commit-msg
 
   set:golang:
     desc: "Golang extensions: golang.go"
@@ -71,8 +73,6 @@ tasks:
     cmds:
       - code --force --install-extension iulian-radu-at.taskfile-launcher # separate tab for tasks
       - code --force --install-extension paulvarache.vscode-taskfile # syntax, hover run tasks
-
-# TODO: Git Graph
 
   set:
     desc: "Setup all available extensions"
