@@ -1,12 +1,15 @@
 # dotfiles
 
 ```sh
-    sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply mibori
-    sh -c "$(wget -qO- get.chezmoi.io)" -- init --apply mibori
+cd && sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply mibori
+```
+
+```sh
+cd && sh -c "$(wget -qO- get.chezmoi.io)" -- init --apply mibori
 ```
 
 ```powershell
-    (irm -useb https://get.chezmoi.io/ps1) | powershell -c - init ---apply mibori
+(irm -useb https://get.chezmoi.io/ps1) | powershell -c - init ---apply mibori
 ```
 
 

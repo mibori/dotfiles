@@ -12,7 +12,7 @@ tasks:
   obsidian:
     desc: Install obsidian from snap. Globally
     cmds:
-      - task: global:snapd
+      - task: snapd
       - sudo snap install obsidian --classic
 
   rpmfusion:
@@ -46,7 +46,7 @@ tasks:
   
   telegram-desktop:
     deps:
-      - global:rpmfusion
+      - rpmfusion
     desc: Install Telegram Desktop from RPM Fusion. Globally
     cmds:
       - sudo dnf install telegram-desktop
