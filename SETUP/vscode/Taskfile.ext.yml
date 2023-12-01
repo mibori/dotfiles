@@ -1,0 +1,65 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+tasks:
+  bash:
+    desc: "Shell extensions: rogalmic.bash-debug"
+    cmds:
+      - code --force --install-extension rogalmic.bash-debug
+
+  csv:
+    desc: "Edit csv extensions: janisdd.vscode-edit-csv"
+    cmds:
+      - code --force --install-extension janisdd.vscode-edit-csv
+
+  git:
+    desc: "Git extensions: waderyan.gitblame, michaelcurrin.auto-commit-msg"
+    cmds:
+      - code --force --install-extension waderyan.gitblame
+      - code --force --install-extension mhutchie.git-graph
+      - code --force --install-extension michaelcurrin.auto-commit-msg
+
+  golang:
+    desc: "Golang extensions: golang.go"
+    cmds:
+      - code --force --install-extension golang.go
+
+  graphql:
+    desc: "GraphQL extesions: graphql.vscode-graphql graphql.vscode-graphql-syntax"
+    cmds:
+      - code --force --install-extension graphql.vscode-graphql
+      - code --force --install-extension graphql.vscode-graphql-syntax
+
+  kube:
+    desc: "Kubernetes extensions: ms-kubernetes-tools.vscode-kubernetes-tools"
+    cmds:
+      - code --force --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+
+  ui:
+    desc: "UI extensions: jerrygoyal.shortcut-menu-bar, chrisdias.vscode-opennewinstance"
+    cmds:
+      - code --force --install-extension jerrygoyal.shortcut-menu-bar # prev and forward
+      - code --force --install-extension chrisdias.vscode-opennewinstance # open folder as new instance of vscode
+
+  protobuf:
+    desc: "Protobuf extensions: zxh404.vscode-proto3"
+    cmds:
+      - code --force --install-extension zxh404.vscode-proto3
+
+  yaml:
+    desc: "YAML extensions: redhat.vscode-yaml"
+    cmds:
+      - code --force --install-extension redhat.vscode-yaml
+
+  vue:
+    desc: "Vue.js extensions: vue.volar"
+    cmds:
+      - code --force --install-extension vue.volar
+
+  # all tasks exts not working correctly
+  # task:
+  #   desc: "go-task's extensions: task.vscode-task, paulvarache.vscode-taskfile"
+  #   cmds:
+  #     - code --force --install-extension task.vscode-task # separate tab for tasks
+  #     - code --force --install-extension paulvarache.vscode-taskfile # syntax, hover run tasks

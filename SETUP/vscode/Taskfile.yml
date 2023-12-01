@@ -1,11 +1,9 @@
-# https://taskfile.dev
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
 
 version: '3'
 
-vars:
-  GREETING: Hello, World!
-
 tasks:
+
   default:
     cmds:
       - which code
@@ -13,66 +11,6 @@ tasks:
       - code --list-extensions
       - cmd: echo && echo
         silent: true
-
-  set:bash:
-    desc: "Shell extensions: rogalmic.bash-debug"
-    cmds:
-      - code --force --install-extension rogalmic.bash-debug
-
-  set:csv:
-    desc: "Edit csv extensions: janisdd.vscode-edit-csv"
-    cmds:
-      - code --force --install-extension janisdd.vscode-edit-csv
-
-  set:git:
-    desc: "Git extensions: waderyan.gitblame, michaelcurrin.auto-commit-msg"
-    cmds:
-      - code --force --install-extension waderyan.gitblame
-      - code --force --install-extension mhutchie.git-graph
-      - code --force --install-extension michaelcurrin.auto-commit-msg
-
-  set:golang:
-    desc: "Golang extensions: golang.go"
-    cmds:
-      - code --force --install-extension golang.go
-
-  set:graphql:
-    desc: "GraphQL extesions: graphql.vscode-graphql graphql.vscode-graphql-syntax"
-    cmds:
-      - code --force --install-extension graphql.vscode-graphql
-      - code --force --install-extension graphql.vscode-graphql-syntax
-
-  set:kube:
-    desc: "Kubernetes extensions: ms-kubernetes-tools.vscode-kubernetes-tools"
-    cmds:
-      - code --force --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-
-  set:ui:
-    desc: "UI extensions: jerrygoyal.shortcut-menu-bar, chrisdias.vscode-opennewinstance"
-    cmds:
-      - code --force --install-extension jerrygoyal.shortcut-menu-bar # prev and forward
-      - code --force --install-extension chrisdias.vscode-opennewinstance # open folder as new instance of vscode
-
-  set:protobuf:
-    desc: "Protobuf extensions: zxh404.vscode-proto3"
-    cmds:
-      - code --force --install-extension zxh404.vscode-proto3
-
-  set:yaml:
-    desc: "YAML extensions: redhat.vscode-yaml"
-    cmds:
-      - code --force --install-extension redhat.vscode-yaml
-
-  set:vue:
-    desc: "Vue.js extensions: vue.volar"
-    cmds:
-      - code --force --install-extension vue.volar
-
-  set:task:
-    desc: "go-task's extensions: iulian-radu-at.taskfile-launcher, paulvarache.vscode-taskfile"
-    cmds:
-      - code --force --install-extension iulian-radu-at.taskfile-launcher # separate tab for tasks
-      - code --force --install-extension paulvarache.vscode-taskfile # syntax, hover run tasks
 
   set:
     desc: "Setup all available extensions"

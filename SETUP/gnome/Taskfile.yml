@@ -1,4 +1,4 @@
-# https://taskfile.dev
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
 
 version: '3'
 
@@ -8,6 +8,6 @@ vars:
 tasks:
 
   ready:
-    - desc: Hide ready notifications
-    - cmds:
+    desc: "Hide ready notifications"
+    cmds:
       - gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'

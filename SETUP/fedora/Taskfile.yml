@@ -1,88 +1,11 @@
-# https://taskfile.dev
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
 
 version: '3'
 
+includes:
+  g: ./Taskfile.g.yml
+
 tasks:
-
-  global:snapd:
-    desc: Install snapd. Globally
-    cmds:
-      - sudo dnf install snapd
-      - sudo ln -s /var/lib/snapd/snap /snap
-  
-  global:obsidian:
-    desc: Install obsidian from snap. Globally
-    cmds:
-      - task: global:snapd
-      - sudo snap install obsidian --classic
-
-  global:rpmfusion:
-    desc: Install RPM Fusion repository. Globally
-    cmds:
-      - sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-      - sudo dnf config-manager --enable fedora-cisco-openh264
-    status:
-      # it seems not working, need to debug
-      - test -f /etc/yum.repos.d/rpmfusion-free.repo
-
-  global:go:
-    desc: Install golang via dnf. Globally.
-    cmds:
-      - sudo dnf install go
-      # - sudo dnf install golang-x-tools-gopls # incopatible with vscode
-
-  global:code:
-    desc: Install MS VSCode from official repo. Globally.
-    cmds:
-      - sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-      - sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-      - dnf check-update
-      - sudo dnf install code
-  
-  global:lazy-git:
-    desc: Install lazy-git from from copr. Globally
-    cmds:
-      - sudo dnf copr enable atim/lazygit -y
-      - sudo dnf install lazygit
-  
-  global:telegram-desktop:
-    deps:
-      - global:rpmfusion
-    desc: Install Telegram Desktop from RPM Fusion. Globally
-    cmds:
-      - sudo dnf install telegram-desktop
-  
-  global:kubernetes:
-    desc: Install Kubernetes. Globally.
-    cmds:
-      - sudo dnf install kubernetes
-  
-  global:dbeaver:
-    desc: Install DBeaver database manager directly from site. Globally.
-    cmds:
-      - sudo dnf install https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm
-  
-  global:zsh:
-    desc: Install zsh. Globally
-    cmds:
-      - sudo dnf install zsh
-
-  global:gnome-extensions-app:
-    desc: Install gnome-extensions. Globally
-    cmds:
-      - sudo dnf install gnome-extensions-app
-      - cmd: echo see https://extensions.gnome.org
-        silent: true
-      - cmd: echo recommended https://extensions.gnome.org/extension/4839/clipboard-history/
-        silent: true
-
-  eget:
-    desc: Install eget (github releases installer) to ~/bin
-    dir: ~/bin
-    cmds:
-      - curl https://zyedidia.github.io/eget.sh | sh
-    status:
-      - test -f ~/bin/eget
 
   ghq:
     dir: ~/bin
