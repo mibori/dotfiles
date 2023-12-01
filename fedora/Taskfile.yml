@@ -2,10 +2,19 @@
 
 version: '3'
 
-vars:
-  GREETING: Hello, World!
-
 tasks:
+
+  global:snapd:
+    desc: Install snapd. Globally
+    cmds:
+      - sudo dnf install snapd
+      - sudo ln -s /var/lib/snapd/snap /snap
+  
+  global:obsidian:
+    desc: Install obsidian from snap. Globally
+    cmds:
+      - task: global:snapd
+      - sudo snap install obsidian --classic
 
   global:rpmfusion:
     desc: Install RPM Fusion repository. Globally
@@ -57,6 +66,15 @@ tasks:
     desc: Install zsh. Globally
     cmds:
       - sudo dnf install zsh
+
+  global:gnome-extensions-app:
+    desc: Install gnome-extensions. Globally
+    cmds:
+      - sudo dnf install gnome-extensions-app
+      - cmd: echo see https://extensions.gnome.org
+        silent: true
+      - cmd: echo recommended https://extensions.gnome.org/extension/4839/clipboard-history/
+        silent: true
 
   eget:
     desc: Install eget (github releases installer) to ~/bin

@@ -1,0 +1,13 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  GREETING: Hello, World!
+
+tasks:
+
+  ready:
+    - desc: Hide ready notifications
+    - cmds:
+      - gsettings set org.gnome.desktop.wm.preferences focus-new-windows 'smart'
