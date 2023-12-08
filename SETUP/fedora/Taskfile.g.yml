@@ -7,7 +7,7 @@ tasks:
     desc: Install snapd. Globally
     cmds:
       - sudo dnf install snapd
-      - sudo ln -s /var/lib/snapd/snap /snap
+      - sudo ln -sf /var/lib/snapd/snap /snap
   
   obsidian:
     desc: Install obsidian from snap. Globally
@@ -19,6 +19,7 @@ tasks:
     desc: Install RPM Fusion repository. Globally
     cmds:
       - sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+      - dnf install 'dnf-command(config-manager)'
       - sudo dnf config-manager --enable fedora-cisco-openh264
     status:
       # it seems not working, need to debug
@@ -79,3 +80,33 @@ tasks:
     desc: Install gnome-tweaks. Globally.
     cmds:
       - sudo dnf install gnome-tweaks
+
+  tldr:
+    desc: Install tldr (help for command line). Globally
+    cmds:
+      - sudo dnf install tldr
+  
+  podman-compose:
+    desc: Install podman-compose. Globally
+    cmds:
+      - sudo dnf install podman-compose
+
+  chrome:
+    desc: Install Google Chrome. Globally
+    cmds:
+      - sudo dnf install google-chrome-stable
+  
+  direnv:
+    desc: Install direnv. Globally
+    cmds:
+      - sudo dnf install direnv
+  
+  edge:
+    desc: Install Microsoft Edge browser. Globally
+    cmds:
+      - flatpak install com.microsoft.Edge
+
+  github-desktop:
+    desc: Install Github Desktop. Globally.
+    cmds:
+      - flatpak install org.fedoraproject.Platform
