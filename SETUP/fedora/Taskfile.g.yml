@@ -110,3 +110,9 @@ tasks:
     desc: Install Github Desktop. Globally.
     cmds:
       - flatpak install org.fedoraproject.Platform
+
+  # Flatpak variant crashes
+  postman:
+    desc: Install Postman. Globally
+    cmds:
+      - snap install postman
