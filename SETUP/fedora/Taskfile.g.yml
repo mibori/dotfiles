@@ -116,3 +116,14 @@ tasks:
     desc: Install Postman. Globally
     cmds:
       - snap install postman
+
+  fish:
+    desc: Install fish shell. Globally
+    cmds:
+      - sudo dnf install fish
+
+  chsh-fish:
+    desc: Install fish shell and change default shell
+    cmds:
+      - task: fish
+      - chsh -s /usr/bin/fish
