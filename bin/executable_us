@@ -1,0 +1,11 @@
+#!/bin/sh
+
+mount_option="O"
+
+if [ "$1" = "-p" ]; then
+    shift
+    priveleged_flag="--privileged"
+    mount_option="Z"
+fi
+
+podman run -it --rm ${priveleged_flag} -v "${PWD}:/home/us/cwd:${mount_option}" -w /home/us/cwd "$1"

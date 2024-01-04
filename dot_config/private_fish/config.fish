@@ -7,6 +7,8 @@ if test -d "$HOME/bin"
     set PATH "$HOME/bin" $PATH
 end
 
+
 if status is-interactive
-    # something
+    bind \ct "task (task --list --json | jq -r '.tasks[].name' | fzf -m --reverse --preview 'task --summary {}' )"
+    bind \ce "code ."
 end

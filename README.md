@@ -12,6 +12,12 @@ cd && sh -c "$(wget -qO- get.chezmoi.io)" -- init --apply mibori
 (irm -useb https://get.chezmoi.io/ps1) | powershell -c - init ---apply mibori
 ```
 
+# Fedora
+
+in `SETUP/fedora`
+
+1. `install-eget-go-task.sh`
+2. `task --list`
 
 # Encryption
 
