@@ -9,8 +9,6 @@ tasks:
 
   ghq:
     dir: ~/bin
-    deps:
-      - eget
     desc: Install ghq (repo manager) to ~/bin
     cmds:
       - eget x-motemen/ghq
