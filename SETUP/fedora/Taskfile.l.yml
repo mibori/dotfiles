@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+# For local installation
+
+tasks:
+
+  ghq:
+    dir: ~/bin
+    desc: Install ghq (repo manager) to ~/bin
+    cmds:
+      - eget x-motemen/ghq
+    

@@ -4,12 +4,13 @@ version: '3'
 
 includes:
   g: ./Taskfile.g.yml
+  l: ./Taskfile.l.yml
+
 
 tasks:
 
-  ghq:
-    dir: ~/bin
-    desc: Install ghq (repo manager) to ~/bin
+  container:
     cmds:
-      - eget x-motemen/ghq
-    
+      - task: g.pinentry
+      - task: g.git
+      - task: g.lazy-git

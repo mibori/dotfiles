@@ -1,6 +1,8 @@
 # yaml-language-server: $schema=https://taskfile.dev/schema.json
 version: '3'
 
+# For global installation
+
 tasks:
 
   snapd:
@@ -127,3 +129,13 @@ tasks:
     cmds:
       - task: fish
       - chsh -s /usr/bin/fish
+
+  pinentry:
+    desc: Install pinentry for container usage
+    cmds:
+      - sudo dnf install pinentry
+  
+  git:
+    desc: Install git for container usage
+    cmds:
+      - sudo dnf install git

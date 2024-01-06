@@ -25,6 +25,9 @@ set -e # errexit
 set -f # noglob
 set -C # noclobber
 
+# https://github.com/keybase/keybase-issues/issues/2798 for fedora container
+export GPG_TTY=$(tty)
+
 export GITCEPTION="${GITCEPTION:-}+" # Reuse $Gref except when stacked
 Gref="refs/gcrypt/gitception$GITCEPTION"
 Gref_rbranch="refs/heads/master"
