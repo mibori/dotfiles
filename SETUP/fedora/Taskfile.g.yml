@@ -133,9 +133,9 @@ tasks:
   pinentry:
     desc: Install pinentry for container usage
     cmds:
-      - sudo dnf install pinentry
+      - sudo dnf install -y pinentry
   
   git:
     desc: Install git for container usage
     cmds:
-      - sudo dnf install git
+      - sudo dnf install -y git
