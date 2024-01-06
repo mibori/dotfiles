@@ -12,6 +12,6 @@ tasks:
   container:
     desc: "Install all tools in container"
     cmds:
-      - task: g.pinentry
-      - task: g.git
-      - task: g.lazy-git
+      - task: g:pinentry
+      - task: g:git
+      - task: g:lazy-git
