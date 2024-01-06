@@ -10,6 +10,7 @@ includes:
 tasks:
 
   container:
+    desc: "Install all tools in container"
     cmds:
       - task: g.pinentry
       - task: g.git
