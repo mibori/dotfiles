@@ -14,4 +14,3 @@ tasks:
     cmds:
       - task: g:pinentry
       - task: g:git
-      - task: g:lazy-git
